@@ -43,7 +43,7 @@ Reading flagpart2.txt file:
 
 Reading ICMP packets on my server using tcpdump
 
-    ![Alt text](https://github.com/sagarpopat/CTF-wirteup/blob/master/images/flag2.PNG "Optional Title") 
+   ![Alt text](https://github.com/sagarpopat/CTF-wirteup/blob/master/images/flag2.PNG "Optional Title") 
 
 Flag 2 from flagpart2.txt was 'aniceflag'. 
    
