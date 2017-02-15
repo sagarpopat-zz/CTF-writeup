@@ -1,5 +1,5 @@
 ## HACKIM8 - Web 3 - Blind OS command injection
---------------------------------
+--------
 
 In this interesting challenge, application is taking user input and passes it to a application code that runs a task on the underlying server. At first glance, I have noticed few things which are below: 
 
