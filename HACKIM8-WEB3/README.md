@@ -57,7 +57,6 @@ and our final flag(flagpart1+flagpart2) is
       flag{0omgth4taniceflag}
     
 ## Credits
-- Shubham Mittal
 - Sanjog Panda
 - Archita Aparichita
 - Pratap Chandra
